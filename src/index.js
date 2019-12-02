@@ -22,7 +22,7 @@ app.get('/', (_req, res) => {
 });
 
 app.server.listen(config.port);
-console.log(`Started on port ${app.server.address().port}`);
+console.log(`Started on port ${config.port}`);
 
 module.exports = {
   app
