@@ -15,9 +15,7 @@ export default () => {
         else {
             res.status(200).json({
                 message: 'Post created',
-                obj: {
-                    post
-                }
+                post
             });
         }
     })
@@ -34,9 +32,7 @@ export default () => {
       else {
         res.status(200).json({
           message: 'Posts fetched',
-          obj: {
-            post
-          }
+          post
         });
       }
     })
