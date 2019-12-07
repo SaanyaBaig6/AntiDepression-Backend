@@ -36,7 +36,24 @@ export default () => {
         });
       }
     })
-});
+  });
+
+  api.get('/comment', (req, res) => {
+    PostService.findPostByID(req.query.id, (err, post) => {
+      if (err) {
+        res.status(500).json({ 
+          message: 'An error occured',
+          error: err
+        });
+      }
+      else {
+        res.status(200).json({
+          message: 'Comments fetched',
+          comments: post.comment
+        });
+      }
+    })
+  });
 
   api.put('/', (req, res) => {
     PostService.findPostByID(req.body.id, (err, postData) => {
